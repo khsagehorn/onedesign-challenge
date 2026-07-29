@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "PxGrotesk";
+  src:
+    url("/assets/fonts/Px-Grotesk-Regular.woff2") format("woff2"),
+    url("/assets/fonts/PxGrotesk-Regular.otf") format("otf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "PxGroteskScreen";
+  src:
+    url("/assets/fonts/Px-Grotesk-Screen.woff2") format("woff2"),
+    url("/assets/fonts/PxGrotesk-Screen.otf") format("otf");
+  font-style: normal;
+  font-weight: 800;
+}
+
+h1 {
+  font: var(--typography-type-headline);
+  letter-spacing: var(--typography-letter-spacing);
+}
+
+h1 b {
+  font: var(--typography-type-headline-screen);
+  letter-spacing: var(--typography-letter-spacing);
+}
+
+h2 {
+  font: var(--typography-type-large);
+  letter-spacing: var(--typography-letter-spacing);
+}
+
+p {
+  font: var(--typography-type-body);
+  letter-spacing: var(--typography-letter-spacing);
+}
