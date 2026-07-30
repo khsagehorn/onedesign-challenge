@@ -1,0 +1,6 @@
+.section {
+  padding-left: var(--spacing-grid-margin);
+  padding-right: var(--spacing-grid-margin);
+  padding-top: var(--spacing-space-lg);
+  padding-bottom: var(--spacing-space-lg);
+}
