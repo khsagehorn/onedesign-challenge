@@ -33,5 +33,10 @@ h2 {
 
 p {
   font: var(--typography-type-body);
-  letter-spacing: var(--typography-letter-spacing);
+}
+
+button,
+.button {
+  font: var(--typography-type-eyebrow);
+  text-transform: uppercase;
 }
