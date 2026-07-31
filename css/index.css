@@ -3,4 +3,6 @@
 @import url("variables.css");
 @import url("layout.css");
 @import url("buttons.css");
+@import url("inputs.css");
 @import url("sections/hero.css");
+@import url("sections/card-display.css");

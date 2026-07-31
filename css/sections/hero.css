@@ -1,5 +1,6 @@
 .hero {
-  --hero-headline-size-scale: clamp(2rem, calc(6vw + 3rem), 7.75rem);
+  --hero-headline-size-scale: clamp(3rem, calc(3vw + 3rem), 4rem);
+
   background-color: var(--color-blue);
   height: 100vh;
   color: var(--color-white);
@@ -37,7 +38,13 @@
   margin-bottom: 1.5rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 512px) {
+  .hero {
+    --hero-headline-size-scale: clamp(3rem, calc(6vw + 3rem), 7.75rem);
+  }
+}
+
+@media screen and (min-width: 992px) {
   .hero {
     padding-bottom: 4rem;
   }

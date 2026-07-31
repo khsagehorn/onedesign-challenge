@@ -1,0 +1,14 @@
+label,
+select {
+  font: var(--typography-type-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-blue);
+}
+
+select {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-blue);
+  border-radius: 0;
+  padding: 0.75rem 0.75rem 0.5rem;
+  line-height: 0;
+}

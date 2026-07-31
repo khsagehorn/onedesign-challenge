@@ -16,6 +16,7 @@
       <h1 class="hero__headline">
         Women <b>Innovators</b> in Computer Science
       </h1>
+
       <div class="hero__lower-grid">
         <div class="hero__icon-container">
           <img
@@ -25,6 +26,7 @@
             width="100"
           />
         </div>
+
         <div class="hero__body-container">
           <p class="hero__body-copy">
             Women have played a vital role in the field of computer science,
@@ -33,9 +35,45 @@
             computer program and advancing human space exploration. Take a
             deeper dive into some of these contributions below.
           </p>
+
           <button class="button__double-caret">Learn More</button>
         </div>
       </div>
+    </section>
+
+    <section class="section card-display">
+      <label class="card-display__label" for="innovators">
+        Select an Innovator...
+      </label>
+
+      <select class="card-display__select" name="innovators" id="innovators">
+        <option value="1">Margaret Hamilton</option>
+      </select>
+
+      <ul class="card-display__list">
+        <li class="card">
+          <a
+            class="card__link"
+            href="https://en.wikipedia.org/wiki/Margaret_Hamilton_(software_engineer)"
+          >
+            <article class="card__content-container">
+              <img
+                class="card__image"
+                src="/assets/images/margaret-hamilton.jpg"
+              />
+
+              <div class="card__copy">
+                <h2 class="card__headline">Margaret Hamilton</h2>
+
+                <p>
+                  Margaret Hamilton is an American computer scientist credited
+                  with coining the term “software engineering”.
+                </p>
+              </div>
+            </article>
+          </a>
+        </li>
+      </ul>
     </section>
   </body>
 </html>
