@@ -12,9 +12,11 @@ const setOptions = (dataArray, selectElement) => {
     option.textContent = item.name;
     selectElement.appendChild(option);
   });
+
+  selectElement.value = "1";
 };
 
-// Populate card data based on selection
+// Populate card content based on selection
 const setCardData = (cardData, cardElement) => {
   const imagePath = "/assets/images/";
 
@@ -23,11 +25,11 @@ const setCardData = (cardData, cardElement) => {
   const bodyCopy = cardElement.getElementsByClassName("card__body")[0];
   const link = cardElement.getElementsByClassName("card__link")[0];
 
-  image.src = imagePath + cardData.image;
-  image.alt = cardData.altText;
-  headline.innerHTML = cardData.name;
-  bodyCopy.innerHTML = cardData.description;
-  link.href = cardData.url;
+  image.src = cardData.image ? imagePath + cardData.image : "";
+  image.alt = cardData.altText ? cardData.altText : "";
+  headline.innerHTML = cardData.name ? cardData.name : "";
+  bodyCopy.innerHTML = cardData.description ? cardData.description : "";
+  link.href = cardData.url ? cardData.url : "";
 };
 
 // Event handler for Select element
@@ -38,9 +40,19 @@ const selectInnovator = (dataArray, selectElement, card) => {
       (item) => item.id.toString() === id.toString(),
     );
 
-    setCardData(cardData, cardElement);
+    if (cardData) {
+      setCardData(cardData, cardElement);
+    } else {
+      console.log("Innovator data not found.");
+    }
   });
 };
 
-setOptions(data, selectElement);
-selectInnovator(data, selectElement, cardElement);
+// const setDefaultCard = () => {
+//   selectElement.value = "1";
+// };
+
+if (!!data) {
+  setOptions(data, selectElement);
+  selectInnovator(data, selectElement, cardElement);
+}
