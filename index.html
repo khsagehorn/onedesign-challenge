@@ -12,62 +12,51 @@
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <section class="section hero">
-      <h1 class="hero__headline">
-        Women <b>Innovators</b> in Computer Science
-      </h1>
+    <main>
+      <section class="section hero">
+        <h1 class="hero__headline">
+          Women <b>Innovators</b> in Computer Science
+        </h1>
 
-      <div class="hero__lower-grid">
-        <div class="hero__icon-container">
-          <img
-            class="hero__icon"
-            src="/assets/svg/asterisk.svg"
-            height="100"
-            width="100"
-          />
+        <div class="hero__lower-grid">
+          <div class="hero__icon-container">
+            <img
+              class="hero__icon"
+              src="/assets/svg/asterisk.svg"
+              alt=""
+              height="100"
+              width="100"
+            />
+          </div>
+
+          <div class="hero__body-container">
+            <p class="hero__body-copy">
+              Women have played a vital role in the field of computer science,
+              developing some of the most essential components of modern IT.
+              Just a few of the achievements women have made include creating
+              the first computer program and advancing human space exploration.
+              Take a deeper dive into some of these contributions below.
+            </p>
+
+            <button class="button__double-caret">Learn More</button>
+          </div>
         </div>
+      </section>
 
-        <div class="hero__body-container">
-          <p class="hero__body-copy">
-            Women have played a vital role in the field of computer science,
-            developing some of the most essential components of modern IT. Just
-            a few of the achievements women have made include creating the first
-            computer program and advancing human space exploration. Take a
-            deeper dive into some of these contributions below.
-          </p>
+      <section class="section card-display">
+        <label class="card-display__label" for="innovators">
+          Select an Innovator...
+        </label>
 
-          <button class="button__double-caret">Learn More</button>
-        </div>
-      </div>
-    </section>
+        <select
+          class="card-display__select"
+          name="innovators"
+          id="innovators"
+        ></select>
 
-    <section class="section card-display">
-      <label class="card-display__label" for="innovators">
-        Select an Innovator...
-      </label>
-
-      <select
-        class="card-display__select"
-        name="innovators"
-        id="innovators"
-      ></select>
-
-      <ul class="card-display__list">
-        <li class="card">
-          <a class="card__link">
-            <article class="card__content-container">
-              <img class="card__image" />
-
-              <div class="card__copy">
-                <h2 class="card__headline"></h2>
-
-                <p class="card__body"></p>
-              </div>
-            </article>
-          </a>
-        </li>
-      </ul>
-    </section>
+        <ul class="card-display__list" id="card-list"></ul>
+      </section>
+    </main>
     <script type="module" src="/js/index.js"></script>
   </body>
 </html>
