@@ -1,3 +1,7 @@
+.card-display {
+  min-height: 100vh;
+}
+
 .card-display__list {
   list-style: none;
   display: grid;

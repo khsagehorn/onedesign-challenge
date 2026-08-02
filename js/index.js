@@ -1,5 +1,6 @@
 import data from "../assets/data.js";
 
+// Fetch an HTML partial
 const loadHtmlFile = async (filePath) => {
   const response = await fetch(filePath);
   const htmlText = await response.text();
@@ -9,7 +10,8 @@ const loadHtmlFile = async (filePath) => {
 
 const selectElement = document.getElementById("innovators");
 const cardListElement = document.getElementById("card-list");
-// const cardElement = document.getElementsByClassName("card")[0];
+const scrollTrigger = document.getElementById("scroll-trigger");
+const cardSection = document.getElementById("card-display-section");
 const cardHtml = await loadHtmlFile("./html/card.html");
 
 // Set select options based on supplied data
@@ -43,7 +45,7 @@ const setCardData = (id, dataArray, cardElement) => {
   link.href = cardData.url ? cardData.url : "";
 };
 
-//
+// Build single card HTML and content
 const buildSingleCard = (id, dataArray, cardListElement) => {
   cardListElement.innerHTML = cardHtml;
   const cardElement = cardListElement.getElementsByClassName("card")[0];
@@ -64,8 +66,20 @@ const selectInnovator = (dataArray, selectElement) => {
   });
 };
 
+const handleClick = (pageSection) => {
+  pageSection.scrollIntoView({ behavior: "smooth" });
+};
+
+const heroButtonClick = (scrollTrigger, pageSection) => {
+  scrollTrigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    handleClick(pageSection);
+  });
+};
+
 if (!!data) {
   setOptions(data, selectElement);
   buildSingleCard(1, data, cardListElement);
   selectInnovator(data, selectElement);
+  heroButtonClick(scrollTrigger, cardSection);
 }
