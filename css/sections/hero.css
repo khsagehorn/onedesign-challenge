@@ -43,7 +43,7 @@
 
 .hero__headline b::after {
   position: absolute;
-  content: attr(data-text);
+  content: attr(data-text) / "";
   width: 5em;
   color: var(--color-white);
   left: 0;
