@@ -16,6 +16,10 @@ const cardHtml = await loadHtmlFile("./html/card.html");
 
 // Set select options based on supplied data
 const setOptions = (dataArray, selectElement) => {
+  const optionAll = document.createElement("option");
+  optionAll.value = "all";
+  optionAll.textContent = "All Innovators";
+
   dataArray.forEach((item) => {
     const option = document.createElement("option");
 
@@ -23,6 +27,8 @@ const setOptions = (dataArray, selectElement) => {
     option.textContent = item.name;
     selectElement.appendChild(option);
   });
+
+  selectElement.append(optionAll);
 };
 
 // Populate card content
@@ -53,12 +59,26 @@ const buildSingleCard = (id, dataArray, cardListElement) => {
   setCardData(id, dataArray, cardElement);
 };
 
+// Build all cards
+const buildAllCards = (dataArray, cardListElement) => {
+  cardListElement.innerHTML = "";
+  dataArray.forEach((innovator, index) => {
+    cardListElement.insertAdjacentHTML("beforeend", cardHtml);
+    const cardElement = cardListElement.getElementsByClassName("card")[index];
+    const cardId = dataArray[index].id.toString();
+
+    setCardData(cardId, dataArray, cardElement);
+  });
+};
+
 // Event handler for Select element
 const selectInnovator = (dataArray, selectElement) => {
   selectElement.addEventListener("change", (event) => {
     const id = event.target.value;
 
-    if (id) {
+    if (id && id === "all") {
+      buildAllCards(dataArray, cardListElement);
+    } else if (id && id !== "all") {
       buildSingleCard(id, dataArray, cardListElement);
     } else {
       console.error("Innovator data not found.");
@@ -66,10 +86,12 @@ const selectInnovator = (dataArray, selectElement) => {
   });
 };
 
+// Helper function for scroll button
 const handleClick = (pageSection) => {
   pageSection.scrollIntoView({ behavior: "smooth" });
 };
 
+// Event handler for scroll button
 const heroButtonClick = (scrollTrigger, pageSection) => {
   scrollTrigger.addEventListener("click", (event) => {
     event.preventDefault();
