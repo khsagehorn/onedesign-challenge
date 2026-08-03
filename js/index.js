@@ -38,7 +38,7 @@ const setCardData = (id, dataArray, cardElement) => {
     (item) => item.id.toString() === id.toString(),
   );
 
-  const imagePath = "/assets/images/";
+  const imagePath = "./assets/images/";
 
   const image = cardElement.getElementsByClassName("card__image")[0];
   const headline = cardElement.getElementsByClassName("card__headline")[0];
