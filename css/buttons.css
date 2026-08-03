@@ -11,9 +11,6 @@ button,
   color: var(--color-blue);
   padding: 0.75rem 1rem;
   cursor: pointer;
-  transition:
-    background-position 0.2s ease-out,
-    color 0.3s ease;
   line-height: 0;
 }
 
@@ -23,6 +20,9 @@ button:focus-visible,
 .button:focus-visible {
   background-position: left bottom;
   color: var(--color-white);
+  transition:
+    background-position 0.2s ease-out,
+    color 0.2s ease;
 }
 
 button:hover::before,

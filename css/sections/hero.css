@@ -26,8 +26,31 @@
   font-size: var(--hero-headline-size-scale);
 }
 
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5em;
+  }
+}
+
 .hero__headline b {
+  position: relative;
   font-size: var(--hero-headline-size-scale);
+  color: var(--color-blue);
+}
+
+.hero__headline b::after {
+  position: absolute;
+  content: attr(data-text);
+  width: 5em;
+  color: var(--color-white);
+  left: 0;
+  top: 50%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  animation: typewriter 0.75s steps(10) 0.15s 1 normal both;
 }
 
 .hero__lower-grid {
