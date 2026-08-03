@@ -1,13 +1,18 @@
 button,
 .button {
-  border: 1px solid var(--color-blue);
-  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
+  background-image: linear-gradient(
+    to right,
+    var(--color-blue) 50%,
+    var(--color-white) 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
   color: var(--color-blue);
   padding: 0.75rem 1rem;
   cursor: pointer;
   transition:
-    border 0.3s ease,
-    background-color 0.3s ease,
+    background-position 0.2s ease-out,
     color 0.3s ease;
   line-height: 0;
 }
@@ -16,9 +21,15 @@ button:hover,
 button:focus-visible,
 .button:hover,
 .button:focus-visible {
-  border: 1px solid var(--color-white);
-  background-color: var(--color-blue);
+  background-position: left bottom;
   color: var(--color-white);
+}
+
+button:hover::before,
+button::before:focus-visible,
+.button::before:hover,
+.button::before:focus-visible {
+  transform: scaleX(1);
 }
 
 .button__double-caret::after {
