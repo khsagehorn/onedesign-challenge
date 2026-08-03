@@ -12,6 +12,7 @@ const selectElement = document.getElementById("innovators");
 const cardListElement = document.getElementById("card-list");
 const scrollTrigger = document.getElementById("scroll-trigger");
 const cardSection = document.getElementById("card-display-section");
+const errorHtml = await loadHtmlFile("./html/error.html");
 const cardHtml = await loadHtmlFile("./html/card.html");
 
 // Set select options based on supplied data
@@ -72,7 +73,7 @@ const buildAllCards = (dataArray, cardListElement) => {
 };
 
 // Event handler for Select element
-const selectInnovator = (dataArray, selectElement) => {
+const selectInnovator = (dataArray, selectElement, cardSection) => {
   selectElement.addEventListener("change", (event) => {
     const id = event.target.value;
 
@@ -82,6 +83,7 @@ const selectInnovator = (dataArray, selectElement) => {
       buildSingleCard(id, dataArray, cardListElement);
     } else {
       console.error("Innovator data not found.");
+      cardSection.innerHTML = errorHtml;
     }
   });
 };
@@ -99,9 +101,13 @@ const heroButtonClick = (scrollTrigger, pageSection) => {
   });
 };
 
-if (!!data) {
+heroButtonClick(scrollTrigger, cardSection);
+
+if (data && data.length) {
   setOptions(data, selectElement);
   buildSingleCard(1, data, cardListElement);
   selectInnovator(data, selectElement);
-  heroButtonClick(scrollTrigger, cardSection);
+} else {
+  console.error("Innovator Data Not Found");
+  cardSection.innerHTML = errorHtml;
 }
