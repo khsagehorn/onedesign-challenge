@@ -1,8 +1,8 @@
 @font-face {
   font-family: "PxGrotesk";
   src:
-    url("/assets/fonts/Px-Grotesk-Regular.woff2") format("woff2"),
-    url("/assets/fonts/PxGrotesk-Regular.otf") format("otf");
+    url("../assets/fonts/Px-Grotesk-Regular.woff2") format("woff2"),
+    url("../assets/fonts/PxGrotesk-Regular.otf") format("otf");
   font-style: normal;
   font-weight: 400;
 }
@@ -10,8 +10,8 @@
 @font-face {
   font-family: "PxGroteskScreen";
   src:
-    url("/assets/fonts/Px-Grotesk-Screen.woff2") format("woff2"),
-    url("/assets/fonts/PxGrotesk-Screen.otf") format("otf");
+    url("../assets/fonts/Px-Grotesk-Screen.woff2") format("woff2"),
+    url("../assets/fonts/PxGrotesk-Screen.otf") format("otf");
   font-style: normal;
   font-weight: 800;
 }
