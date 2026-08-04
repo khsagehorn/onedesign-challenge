@@ -2,7 +2,13 @@
 
 **Hunter Sagehorn - Senior Frontend Developer**
 
-## Getting Started
+GitHub Repo: [https://github.com/khsagehorn/onedesign-challenge](https://github.com/khsagehorn/onedesign-challenge)
+
+GitHub Pages Deployment: [https://khsagehorn.github.io/onedesign-challenge/](https://khsagehorn.github.io/onedesign-challenge/)
+
+_Note: I resized and optimized images to make them small enough to comfortably include in the repo._
+
+## Setup
 
 - Start a local server to view: `npx http-server -p 3000`, or however you prefer!
 
